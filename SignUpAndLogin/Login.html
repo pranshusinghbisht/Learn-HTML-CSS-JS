@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Masai Login
+    </title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif
+        }
+
+        img {
+            margin-top: 29px;
+        }
+
+        h1 {
+            padding-top: 19px;
+            text-align: center;
+        }
+
+        form {
+            width: 29%;
+            height: 448px;
+            margin-top: 29px;
+            margin-left: 34%;
+            justify-content: center;
+            box-shadow: rgba(70, 70, 82, 0.2) 0px 7px 29px 0px;
+            border-radius: 5%;
+        }
+
+        #email {
+            width: 90%;
+            height: 10%;
+            margin-left: 20px;
+            border: 0px;
+            border-radius: 10px;
+            background-color: rgb(216, 230, 245);
+            color: black;
+        }
+
+        #password {
+            width: 89%;
+            height: 09%;
+            background-color: rgb(216, 230, 245);
+            margin-left: 20px;
+            border: 0px;
+            border-radius: 10px;
+            color: black;
+        }
+
+        input {
+            width: 90%;
+            height: 10%;
+            margin-left: 20px;
+            color: white;
+            font-size: 20px;
+            background-color: rgba(28, 79, 233, 0.773);
+            border: 0px;
+            border-radius: 10px;
+        }
+
+        label {
+            font-size: 18px;
+            margin-left: 20px;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        a {
+            border: 0px;
+            color: rgb(44, 44, 231);
+            background-color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <center>
+        <img src="https://sso.masaischool.com/brand_dark.svg" alt="Masai logo">
+    </center>
+
+    <form>
+
+        <h1>
+            Login
+        </h1>
+
+        <label for="Email">
+            Email
+        </label>
+        <input id="email" type="email"><br><br>
+
+        <label for="password">
+            Password
+        </label>
+        <input id="password" type="password"><br><br><br>
+
+        <input type="submit" value="LOGIN"><br><br><br><br>
+
+        <p>
+            Don't have an account? <a href="signUp.html">signup</a>
+        </p>
+
+    </form>
+
+</body>
+
+</html>
+
+<script>
+
+    let form = document.querySelector("form");
+    let signupPage = JSON.parse(localStorage.getItem("signup")) || [];
+
+    form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        if (signupPage.length === 0) {
+            alert("No User Found");
+            return;
+        }
+
+        let obj = {
+            email: form.email.value,
+            password: form.password.value,
+        }
+
+        let isLogedin = false;
+        signupPage.forEach(function (ele) {
+
+            if (ele.email === obj.email && ele.password === obj.password) {
+                isLogedin = true;
+
+                localStorage.setItem("signin", JSON.stringify(ele));
+                alert("Log in Successful");
+            }
+
+        })
+
+        if (isLogedin === false) {
+            alert("User Doesn't Exist");
+        }
+
+    })
+
+</script>
+</ul>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Masai Signup
+    </title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif
+        }
+
+        img {
+            margin-top: 29px;
+        }
+
+        h1 {
+            padding-top: 19px;
+            text-align: center;
+        }
+
+        form {
+            width: 29%;
+            height: 599px;
+            margin-top: 30px;
+            margin-left: 35%;
+            justify-content: center;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border-radius: 5%;
+        }
+
+        #email {
+            width: 90%;
+            height: 8%;
+            margin-left: 20px;
+            border: 0px;
+            border-radius: 10px;
+            background-color: rgb(216, 230, 245);
+            color: black;
+        }
+
+        #mbl {
+            width: 90%;
+            height: 8%;
+            background-color: rgb(216, 230, 245);
+            margin-left: 20px;
+            border: 0px;
+            border-radius: 10px;
+            color: black;
+        }
+
+        #password {
+            width: 90%;
+            height: 8%;
+            background-color: rgb(216, 230, 245);
+            margin-left: 20px;
+            border: 0px;
+            border-radius: 10px;
+            color: black;
+        }
+
+        input {
+            width: 90%;
+            height: 10%;
+            margin-left: 20px;
+            color: white;
+            font-size: 20px;
+            background-color: rgba(28, 79, 233, 0.773);
+            border: 0px;
+            border-radius: 10px;
+        }
+
+        label {
+            font-size: 18px;
+            margin-left: 20px;
+        }
+
+        p {
+            text-align: center;
+            width: 100%;
+        }
+
+        u {
+            color: blue;
+        }
+
+        a {
+            border: 0px;
+            color: rgb(44, 44, 231);
+            background-color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <center>
+        <img src="https://sso.masaischool.com/brand_dark.svg" alt="Masai logo">
+    </center>
+
+    <form>
+        <h1>
+            Sign Up
+        </h1>
+
+        <label for="Email">
+            Email
+        </label>
+        <input id="email" type="email"><br><br>
+
+        <label for="mobile number">
+            Mobile Number
+        </label>
+        <input id="mbl" type="number"><br><br>
+
+        <label for="password">
+            Password
+        </label>
+        <input id="password" type="password"><br><br>
+
+        <p>
+            By sigining up, I axxept the Masai School <u>Term of Sevice</u> and acknowledge the <u>Privacy Policy</u>
+        </p>
+
+        <input type="submit" value="SIGN UP"><br><br>
+
+        <p>
+            Already have an account? <a href="Login.html">Login</a>
+        </p>
+
+    </form>
+
+
+</body>
+
+</html>
+
+<script>
+
+    let form = document.querySelector("form");
+    let signupPage = JSON.parse(localStorage.getItem("signup")) || [];
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let obj = {
+            email: form.email.value,
+            mbl: form.mbl.value,
+            password: form.password.value,
+        }
+
+        if (obj.email == "" || obj.mbl == "" || obj.password == "") {
+            alert("Invalid Details")
+        }
+        else {
+            signupPage.push(obj);
+            localStorage.setItem("signup", JSON.stringify(signupPage));
+        }
+    })
+
+</script>
