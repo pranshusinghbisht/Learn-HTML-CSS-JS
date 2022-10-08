@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>puppy</title>
+    <style>
+        button {
+            height: 5vh;
+            width: 10vh;
+        }
+
+        #img {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="img">
+        <img src="https://source.unsplash.com/500x500/?dogs,puppy" alt="">
+    </div>
+    <br> <br>
+    <center>
+        <button>
+            <span>
+                Like👍
+            </span>
+        </button>
+        <button>
+            <span>
+                dislike 👎
+            </span>
+        </button>
+        <h1>
+            Number of likes:-
+            <span id="plike">
+
+            </span>
+        </h1>
+        <h1>
+            Number of dislikes:-
+            <span id="pdislike">
+
+            </span>
+        </h1>
+    </center>
+</body>
+
+</html>
+<script>
+
+    if (localStorage.getItem("like") == null) {
+        likeCount = 0;
+    }
+    else {
+        likeCount = localStorage.getItem("like");
+    }
+    document.querySelector("#plike").innerText = likeCount;
+
+
+    if (localStorage.getItem("dislike") == null) {
+        dislikeCount = 0;
+    }
+    else {
+        dislikeCount = localStorage.getItem("dislike");
+    }
+    document.querySelector("#pdislike").innerText = dislikeCount;
+
+
+    document.querySelector("button").addEventListener("click", likeF)
+    document.querySelector("button+button").addEventListener("click", dislikeF)
+
+    function likeF() {
+        likeCount++;
+        document.querySelector("#plike").innerText = likeCount;
+        localStorage.setItem("like", likeCount);
+    }
+    function dislikeF() {
+        dislikeCount++;
+        document.querySelector("#pdislike").innerText = dislikeCount;
+        localStorage.setItem("dislike", dislikeCount);
+
+
+    }
+</script>

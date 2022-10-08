@@ -1,0 +1,90 @@
+<html>
+  <head>
+    <title>Web20-C4</title>
+    <link rel="stylesheet" href="./Styles/index.css" />
+    <link rel="stylesheet" href="./Styles/navbar.css" />
+    <style>
+      #navbar{
+        text-align: center;
+      }
+      #navbar div{
+        display: flex;
+        justify-content: space-around;
+        box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+      }
+      a{
+        text-decoration: none;
+      }
+      h1{
+        margin-left: 44%;
+      }
+form{
+  margin-left: 33%;
+  margin-right: 33%;
+  box-shadow: rgba(0, 0, 0, 0.35)0px 5px 15px 5px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+  display: grid;
+  padding-left: 11%;
+}
+
+input[type=text],input[type=date],select{
+  width: 60%;
+  padding: 12PX 20PX;
+  margin:  8px 0;
+  display: inline-block;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+
+}
+input[type=submit]{
+width: 60%;
+height: 45px;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+
+    </style>
+  </head>
+  <body>
+    <div id="navbar">
+      <h2>Masai Task List</h2>
+      <div>
+        <a href="./index.html">
+          <h2>Home</h2>
+        </a>
+        <a href="./dashboard.html">
+          <h2>Dashboard</h2>
+        </a>
+        <a href="./Progress.html">
+          <h2>In-Progress</h2>
+        </a>
+        <a href="./Done.html">
+          <h2>Done</h2>
+        </a>
+      </div>
+    </div>
+    <div id="create">
+      <h1>Create A Task</h1>
+      <form>
+        <input id="name" placeholder="Task Name" type="text" />
+        <input id="desc" placeholder="Description" type="text" />
+        <label for="">Start Date:-</label>
+        <input type="date" id="start" />
+        <label for="">End Date:-</label>
+        <input type="date" id="end" />
+        <select id="priority">
+          <option value="">Select Priority</option>
+          <option value="Low">Low</option>
+          <option value="Medium">Medium</option>
+          <option value="High">High</option>
+        </select>
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+  <script src="./Scripts/index.js"></script>
+</html>

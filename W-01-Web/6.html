@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+/* large screen */
+        @media screen and (min-width:768px){
+        #boxes{
+            display: grid;
+            font-size: 40px;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: 80px 150px 150px 150px;
+            gap:40px;
+            grid-template-areas: 
+            "nav nav nav"
+            "b1 b1 b2"
+            "b1 b1 b3"
+            "b1 b1 b4"
+        }
+        #boxes>div:nth-child(1){
+           background-color: yellow;
+           grid-area: nav;
+            }
+        #boxes>div:nth-child(2){
+            background-color: red;
+            order: 1;
+            grid-area: b1;
+        }
+        #boxes>div:nth-child(3){
+            background-color: green;
+            order: 2;
+            grid-area: b2;
+        }
+        #boxes>div:nth-child(4){
+            background-color: green;
+            order: 3;
+            grid-area: b3;
+        }
+        #boxes>div:nth-child(5){
+            background-color: green;
+            order: 4;
+            grid-area: b4;
+        }
+    }
+    /* medium screen */
+    @media screen and (min-width:481px) and (max-width:767px){
+        #boxes{
+            display: grid;
+            font-size: 40px;
+            grid-template-columns: repeat(3,1fr);
+            grid-template-rows: 80px 150px 150px 150px;
+            gap:40px;
+            grid-template-areas: 
+            "nav nav nav"
+            "b1 b1 b1"
+            "b2 b3 b4"
+        }
+        #boxes>div:nth-child(1){
+           background-color: yellow;
+           grid-area: nav;
+            }
+        #boxes>div:nth-child(2){
+            background-color: red;
+            order: 1;
+            grid-area: b1;
+        }
+        #boxes>div:nth-child(3){
+            background-color: green;
+            order: 2;
+            grid-area: b2;
+        }
+        #boxes>div:nth-child(4){
+            background-color: green;
+            order: 3;
+            grid-area: b3;
+        }
+        #boxes>div:nth-child(5){
+            background-color: green;
+            order: 4;
+            grid-area: b4;
+        }
+    }
+    /* small screen */
+    @media screen and (min-width:300px) and (max-width:480px){
+        #boxes{
+            display: grid;
+            font-size: 40px;
+            grid-template-columns: repeat(1,1fr);
+            grid-template-rows: 80px 150px 150px 150px 150px;
+            gap:40px;
+            grid-template-areas: 
+            "nav"
+            "b1"
+            "b2"
+            "b3"
+            "b4"
+        }
+        #boxes>div:nth-child(1){
+           background-color: yellow;
+           grid-area: nav;
+            }
+        #boxes>div:nth-child(2){
+            background-color: red;
+            order: 1;
+            grid-area: b1;
+        }
+        #boxes>div:nth-child(3){
+            background-color: green;
+            order: 2;
+            grid-area: b2;
+        }
+        #boxes>div:nth-child(4){
+            background-color: green;
+            order: 3;
+            grid-area: b3;
+        }
+        #boxes>div:nth-child(5){
+            background-color: green;
+            order: 4;
+            grid-area: b4;
+        }
+    }
+    </style>
+</head>
+<body>
+  <div id="boxes">
+  <div>Navigation</div>
+  <div>left box</div>
+  <div>Right box1</div>
+  <div>Right box2</div>
+  <div>Right box3</div> 
+  </div> 
+</body>
+</html>

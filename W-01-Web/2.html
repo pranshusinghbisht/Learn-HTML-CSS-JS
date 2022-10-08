@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Area 1</title>
+    <style>
+        body {
+            display: grid;
+            justify-content: center;
+        }
+
+        .container {
+            /* vertical-align: middle; */
+  
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            height: 600px;
+            width: 700px;
+            font-weight: bold;
+            color: white;
+            gap: 20px 20px
+        }
+
+        .container div {
+
+            border-radius: 10px;
+            background-color: grey;
+            display: flex;
+        }
+        .container div div {
+            align-items: center;
+            margin-left: 13px;
+}
+
+
+        .C {
+
+            margin-right: 189px;
+        }
+
+        .D {
+            margin-left: -189px;
+        }
+
+        .E {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="A">
+            <div>A</div>
+        </div>
+        <div class="B">
+            <div>B</div>
+        </div>
+        <div class="C">
+            <div>C</div>
+        </div>
+        <div class="D">
+            <div>D</div>
+        </div>
+        <div class="E">
+            <div>E</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Area 2</title>
+    <style>
+        body {
+            display: grid;
+            justify-content: center;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            height: 600px;
+            width: 700px;
+            font-weight: bold;
+            color: white;
+            gap: 20px 20px;
+            grid-template-areas:
+                'A A B E'
+                'C D B E';
+        }
+
+        .container div {
+
+            border-radius: 10px;
+            background-color: grey;
+            display: flex;
+        }
+
+        h1 {
+            margin-left: 25px;
+        }
+
+        .A {
+            grid-area: A;
+        }
+
+        .B {
+            grid-area: B;
+        }
+
+        .C {
+            grid-area: C;
+        }
+
+        .D {
+            grid-area: D;
+        }
+
+        .E {
+            grid-area: E;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="A">
+            <h1>A</h1>
+        </div>
+        <div class="B">
+            <h1>B</h1>
+        </div>
+        <div class="C">
+            <h1>C</h1>
+        </div>
+        <div class="D">
+            <h1>D</h1>
+        </div>
+        <div class="E">
+            <h1>E</h1>
+        </div>
+    </div>
+
+</body>
+
+</html>
