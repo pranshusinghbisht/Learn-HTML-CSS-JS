@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admitted</title>
+  <link rel="stylesheet" href="commonStyles.css" />
+</head>
+
+<body>
+  <div id="links">
+    <div><a href="index.html">Home</a></div>
+    <div><a href="applied.html">Applied Jobs</a></div>
+    <div><a href="bookmark.html">Bookmarks</a></div>
+  </div>
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Job Applied</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody id="body"></tbody>
+    </table>
+  </main>
+</body>
+<script>
+
+  let bookmarkdata = JSON.parse(localStorage.getItem("bookmarks")) || [];
+  display(bookmarkdata)
+  function display(bookmarkdata) {
+    bookmarkdata.forEach(function (ele, index) {
+      let row = document.createElement("tr");
+      let col1 = document.createElement("td");
+      col1.innerText = ele.personName
+      let col2 = document.createElement("td");
+      col2.innerText = ele.personEmail;
+      let col3 = document.createElement("td");
+      col3.innerText = ele.personRole;
+      let col4 = document.createElement("td")
+      col4.innerText = "Delete";
+      col4.style.color = "red"
+      col4.addEventListener("click", function () {
+        // event.target.parentNode.remove()
+        Deletebook(index)
+
+      })
+      row.append(col1, col2, col3, col4)
+      document.querySelector("tbody").append(row)
+
+    })
+
+  }
+
+  function Deletebook(index) {
+
+    bookmarkdata.splice(index, 1)
+    localStorage.setItem("bookmarks", JSON.stringify(bookmarkdata))
+    // display(bookmarkdata)
+
+
+
+  } 
+</script>
+
+</html>
