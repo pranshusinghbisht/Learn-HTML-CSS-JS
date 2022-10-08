@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <body>
+        <div id="nav">
+          <img src="https://mpng.subpng.com/20180404/sve/kisspng-reebok-classic-logo-sneakers-shoe-reebok-5ac454454ea554.1664528915228160693221.jpg"
+           alt="Reebok">
+        <a href="signup.html" target="_blank">SignUp</a>
+        <a href="login.html" target="_blank">Login</a>
+        <a href="womens.html">Women</a>
+        <a href="cart.html">Go to Cart</a>
+        <a href="payment.html">Enter Card Details</a>
+        </div>
+          <select id="filter">
+            <option value="">Select Brand</option> 
+            <option value="Reebok">Reebok</option>
+            <option value="Nike">Nike</option>
+            <option value="Adidas">Adidas</option>
+          </select>
+          <div id="container"></div>
+      </body>
+    
+</body>
+</html>
+<script>
+    let container=document.getElementById("container");
+    let filter=document.getElementById("filter");
+    let cartLS=JSON.parse(localStorage.getItem("cart")) || [];
+      function Display(data){
+      container.innerHTML=[];
+          data.forEach(function(ele){
+          let product=document.createElement("div");
+          let img=document.createElement("img");
+          img.src=ele.image_url;
+          let name=document.createElement("h4");
+          name.textContent=ele.name;
+          let brand=document.createElement("p");
+          brand.textContent=ele.brand;
+          let price=document.createElement("p");
+          price.textContent="Price: "+ele.price;
+          let strikedoffprice=document.createElement("p");
+          strikedoffprice.textContent="striked of price: "+ele.strikedoffprice;
+          let cart=document.createElement("button");
+          cart.textContent="Add to Cart";
+          cart.addEventListener("click", function(){
+          AddtoCart(ele)
+
+          })
+          product.append(img, name, brand,price, strikedoffprice, cart);
+          container.append(product);
+         }) 
+      }
+Display(mensData)
+filter.addEventListener("change", function(){
+       if(filter.value===""){
+          Display(mensData);
+       }
+else{
+let filtered= mensData.filter(function(ele){
+  return ele.brand===filter.value; 
+})
+Display(filtered);
+}
+})
+
+function AddtoCart(product){
+cartLS.push(product);
+alert("Product added to Cart");
+localStorage.setItem("cart", JSON.stringify(cartLS))
+
+}
+</script>
