@@ -1,0 +1,32 @@
+/* Write all the necessery css  */
+#create{
+    text-align: center;
+   margin-left: 27%;
+    width: 30%;
+    padding: 7%;
+    box-shadow: rgba(0,0,0,0.35) 0px 5px 15px;
+}
+form{
+    display: grid;
+    width: 75%;
+    margin-left: 10px;
+    padding-left: 50px;
+}
+
+input{
+    margin: 10px;
+}
+select{
+    margin: 10px;
+}
+#total-price{
+    width: 30%;
+    margin-left: 40%;
+    padding: 20px;
+}
+table{
+    margin-left: 30%;
+}
+th{
+    background-color: yellow;
+}
